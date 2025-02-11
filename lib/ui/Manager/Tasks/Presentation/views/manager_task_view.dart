@@ -2,11 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:untitled36/core/utils/app_colors.dart';
 import 'package:untitled36/core/utils/text_styles.dart';
-import 'package:untitled36/ui/Recepionist/Reports/Presentation/views/widgets/receptionist_report_view_body.dart';
+import 'package:untitled36/ui/Manager/Tasks/Presentation/views/widgets/manager_call_view_body.dart';
 
 
-class ReceptionistReportView extends StatelessWidget {
-  const ReceptionistReportView({super.key});
+class ManagerTaskView extends StatelessWidget {
+  const ManagerTaskView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +18,11 @@ class ReceptionistReportView extends StatelessWidget {
         centerTitle: true,
         surfaceTintColor: AppColors.white,
         title: Text(
-          "Reports",
+          "Tasks",
           style: TextStyles.style16Regular,
         ),
       ),
-      body: const ReceptionistReportViewBody(),
+      body: const ManagerCallViewBody(),
     );
   }
 }

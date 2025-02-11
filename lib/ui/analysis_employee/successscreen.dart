@@ -11,25 +11,28 @@ class SuccessScreen extends StatelessWidget {
       backgroundColor: Color(0xFF22C7BB),
       body: SafeArea(
         child: Center(
-          child: Column(
-            children: [
+          child:
+
               //  SizedBox(height: screenHeight * 0.1),
               Column(
-                children: [
-                  Image.asset(
-                    'assets/kkkl.png',
-                    width: 150,
-                    height: 100,
-                  ),
-                  SizedBox(height: 10),
-                  Image.asset(
-                    'assets/lklkl.png',
-                    width: 50,
-                    height: 50,
-                  ),
-                ],
-              ),
-              // SizedBox(height: screenHeight * 0.04),
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Stack(alignment: Alignment.center, children: [
+                Image.asset(
+                  'assets/kkkl.png',
+                  width: 130,
+                  height: 130,
+                  fit: BoxFit.contain,
+                ),
+                SizedBox(height: 10),
+                Image.asset(
+                  'assets/lklkl.png',
+                  width: 60,
+                  height: 60,
+                  fit: BoxFit.contain,
+                ),
+              ]),
+              SizedBox(height: screenHeight * 0.04),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.1),
                 child: Text(
@@ -39,7 +42,7 @@ class SuccessScreen extends StatelessWidget {
                       fontSize: screenWidth * 0.05, color: Colors.white),
                 ),
               ),
-              //  SizedBox(height: screenHeight * 0.05),
+              SizedBox(height: screenHeight * 0.05),
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -53,7 +56,7 @@ class SuccessScreen extends StatelessWidget {
                   height: screenHeight * 0.1,
                 ),
               ),
-              //   SizedBox(height: screenHeight * 0.05),
+              SizedBox(height: screenHeight * 0.05),
               Image.asset(
                 'assets/jkjk.png',
                 width: double.infinity,

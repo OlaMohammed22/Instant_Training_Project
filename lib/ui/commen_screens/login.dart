@@ -15,84 +15,86 @@ class LoginView extends StatelessWidget {
     final height = size.height;
 
     return Scaffold(
-      body: Background(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: width * 0.07),
-            child: Column(
-              children: [
-                SizedBox(height: height * 0.16),
-                Center(
-                  child: Image.asset(
-                    "assets/logo.png",
-                    width: width * 0.4,
-                    height: height * 0.2,
+      body: SafeArea(
+        child: Background(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: width * 0.07),
+              child: Column(
+                children: [
+                  SizedBox(height: height * 0.16),
+                  Center(
+                    child: Image.asset(
+                      "assets/logo.png",
+                      width: width * 0.4,
+                      height: height * 0.2,
+                    ),
                   ),
-                ),
-                SizedBox(height: height * 0.02),
-                Text(
-                  "Welcome back !",
-                  style: TextStyle(
-                    color: ColorManger.primaryGreen,
-                    fontSize: width * 0.07,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                Text(
-                  "To Continue, Login Now",
-                  style: TextStyle(
-                    color: ColorManger.grey,
-                    fontSize: width * 0.035,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                SizedBox(height: height * 0.05),
-                InputTextt.inputTextStyleWithoutSuffixIcon(
-                  "assets/Group663.svg",
-                  "Phone Number",
-                ),
-                SizedBox(height: height * 0.02),
-                InputTextt.inputTextStyleWithSuffixIcon(
-                  "assets/Group337.svg",
-                  "Password",
-                  const Icon(Icons.remove_red_eye_outlined),
-                ),
-                SizedBox(height: height * 0.015),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    "Forget Password ?",
+                  SizedBox(height: height * 0.02),
+                  Text(
+                    "Welcome back !",
                     style: TextStyle(
-                      decoration: TextDecoration.underline,
-                      decorationThickness: 2,
+                      color: ColorManger.primaryGreen,
+                      fontSize: width * 0.07,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
-                ),
-                SizedBox(height: height * 0.04),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => StartUpView()),
-                    );
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: ColorManger.primaryGreen,
+                  Text(
+                    "To Continue, Login Now",
+                    style: TextStyle(
+                      color: ColorManger.grey,
+                      fontSize: width * 0.035,
+                      fontWeight: FontWeight.w400,
                     ),
-                    width: double.infinity,
-                    height: height * 0.06,
-                    child: const Center(
-                      child: Text(
-                        "Login",
-                        style: TextStyle(fontSize: 18),
+                  ),
+                  SizedBox(height: height * 0.05),
+                  InputTextt.inputTextStyleWithoutSuffixIcon(
+                    "assets/Group663.svg",
+                    "Phone Number",
+                  ),
+                  SizedBox(height: height * 0.02),
+                  InputTextt.inputTextStyleWithSuffixIcon(
+                    "assets/Group337.svg",
+                    "Password",
+                    const Icon(Icons.remove_red_eye_outlined),
+                  ),
+                  SizedBox(height: height * 0.015),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      "Forget Password ?",
+                      style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        decorationThickness: 2,
                       ),
                     ),
                   ),
-                ),
-                SizedBox(height: height * 0.05),
-              ],
+                  SizedBox(height: height * 0.04),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => StartUpView()),
+                      );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: ColorManger.primaryGreen,
+                      ),
+                      width: double.infinity,
+                      height: height * 0.06,
+                      child: const Center(
+                        child: Text(
+                          "Login",
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: height * 0.05),
+                ],
+              ),
             ),
           ),
         ),

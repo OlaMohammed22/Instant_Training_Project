@@ -35,53 +35,55 @@ class _OnboardingViewState extends State<OnboardingView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          double screenWidth = constraints.maxWidth;
-          double screenHeight = constraints.maxHeight;
-          
-          return Background(
-            child: Stack(
-              children: [
-                Positioned(
-                  top: screenHeight * 0.25,
-                  left: screenWidth * 0.5 - (screenWidth * 0.2),
-                  width: screenWidth * 0.4,
-                  height: screenHeight * 0.2,
-                  child: Image.asset("assets/Background_logo.png"),
-                ),
-                Positioned(
-                  top: screenHeight * 0.75,
-                  left: screenWidth * 0.1,
-                  right: screenWidth * 0.1,
-                  child: Column(
-                    children: [
-                      LinearPercentIndicator(
-                        width: screenWidth * 0.8,
-                        lineHeight: screenHeight * 0.01,
-                        percent: 1,
-                        animation: true,
-                        animationDuration: 5000,
-                        backgroundColor: ColorManger.grey,
-                        progressColor: ColorManger.primaryGreen,
-                        barRadius: const Radius.circular(5),
-                      ),
-                      SizedBox(height: screenHeight * 0.02),
-                      Text(
-                        "Loading...",
-                        style: TextStyle(
-                          color: ColorManger.primaryGreen,
-                          fontSize: screenWidth * 0.05,
-                          fontWeight: FontWeight.normal,
-                        ),
-                      )
-                    ],
+      body: SafeArea(
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            double screenWidth = constraints.maxWidth;
+            double screenHeight = constraints.maxHeight;
+            
+            return Background(
+              child: Stack(
+                children: [
+                  Positioned(
+                    top: screenHeight * 0.25,
+                    left: screenWidth * 0.5 - (screenWidth * 0.2),
+                    width: screenWidth * 0.4,
+                    height: screenHeight * 0.2,
+                    child: Image.asset("assets/Background_logo.png"),
                   ),
-                ),
-              ],
-            ),
-          );
-        },
+                  Positioned(
+                    top: screenHeight * 0.75,
+                    left: screenWidth * 0.1,
+                    right: screenWidth * 0.1,
+                    child: Column(
+                      children: [
+                        LinearPercentIndicator(
+                          width: screenWidth * 0.8,
+                          lineHeight: screenHeight * 0.01,
+                          percent: 1,
+                          animation: true,
+                          animationDuration: 5000,
+                          backgroundColor: ColorManger.grey,
+                          progressColor: ColorManger.primaryGreen,
+                          barRadius: const Radius.circular(5),
+                        ),
+                        SizedBox(height: screenHeight * 0.02),
+                        Text(
+                          "Loading...",
+                          style: TextStyle(
+                            color: ColorManger.primaryGreen,
+                            fontSize: screenWidth * 0.05,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
       ),
     );
   }

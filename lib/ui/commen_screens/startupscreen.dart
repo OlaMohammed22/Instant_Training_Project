@@ -18,38 +18,40 @@ class StartUpView extends StatelessWidget {
     final mediaQuery = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: Background(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Prototype Map",
-                style: TextStyle(color: ColorManger.primaryGreen, fontSize: 24),
-              ),
-              SizedBox(height: mediaQuery.height * 0.05),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  buildButton(context, "Doctor", 83, Doctorscreen()),
-                  SizedBox(width: 13),
-                  buildButton(context, "Receptionist", 152, Receptionistscreen()),
-                  SizedBox(width: 13),
-                  buildButton(context, "Nurse", 83, Nursescreen()),
-                ],
-              ),
-              SizedBox(height: mediaQuery.height * 0.03),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  buildButton(context, "Analysis Employee", 170, Analysisscreen()),
-                  SizedBox(width: 13),
-                  buildButton(context, "Manger", 100, Mangerscreen()),
-                  SizedBox(width: 13),
-                  buildButton(context, "HR", 50, Hrscreen()),
-                ],
-              ),
-            ],
+      body: SafeArea(
+        child: Background(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Prototype Map",
+                  style: TextStyle(color: ColorManger.primaryGreen, fontSize: 24),
+                ),
+                SizedBox(height: mediaQuery.height * 0.05),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    buildButton(context, "Doctor", 83, Doctorscreen()),
+                    SizedBox(width: 13),
+                    buildButton(context, "Receptionist", 152, Receptionistscreen()),
+                    SizedBox(width: 13),
+                    buildButton(context, "Nurse", 83, Nursescreen()),
+                  ],
+                ),
+                SizedBox(height: mediaQuery.height * 0.03),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    buildButton(context, "Analysis Employee", 170, Analysisscreen()),
+                    SizedBox(width: 13),
+                    buildButton(context, "Manger", 100, Mangerscreen()),
+                    SizedBox(width: 13),
+                    buildButton(context, "HR", 50, Hrscreen()),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

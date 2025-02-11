@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled36/ui/Hr/Reports/Presentation/views/widgets/notifications.dart';
 
 class UserProfile extends StatelessWidget {
   const UserProfile({
@@ -6,13 +7,13 @@ class UserProfile extends StatelessWidget {
     required this.name,
     required this.role,
     required this.imagePath,
-    this.onTap, 
+    this.onTap,
   });
 
   final String name;
   final String role;
   final String imagePath;
-  final VoidCallback? onTap; 
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +45,18 @@ class UserProfile extends StatelessWidget {
             ),
           ],
         ),
-        Image.asset('assets/gg.png'),
+        InkWell(
+          child: Image.asset('assets/gg.png'),
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) {
+                  return NotificationScreen();
+                },
+              ),
+            );
+          },
+        ),
       ],
     );
   }
