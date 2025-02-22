@@ -4,26 +4,30 @@ import 'package:untitled36/core/utils/text_styles.dart';
 import '../../../../../../core/utils/app_colors.dart';
 
 class CustomDropdownButtonFormField extends StatelessWidget {
-  const CustomDropdownButtonFormField(
-      {super.key,
-      required this.iconPath,
-      required this.hintText,
-      required this.items});
+  const CustomDropdownButtonFormField({
+    super.key,
+    required this.iconPath,
+    required this.hintText,
+    required this.items,
+    this.selected,
+    this.onChanged,
+  });
 
   final String iconPath;
   final String hintText;
   final List<String> items;
+  final String? selected;
+  final void Function(String? value)? onChanged;
 
   @override
   Widget build(BuildContext context) {
-    String? selectedGender;
     return DropdownButtonFormField<String>(
       iconSize: 24,
       icon: const Icon(
         Icons.arrow_drop_down_outlined,
         color: AppColors.mediumGrey,
       ),
-      value: selectedGender,
+      value: selected,
       decoration: InputDecoration(
         prefixIcon: SizedBox(
           width: 50,
@@ -75,9 +79,7 @@ class CustomDropdownButtonFormField extends StatelessWidget {
           child: Text(gender),
         );
       }).toList(),
-      onChanged: (value) {
-        selectedGender = value;
-      },
+      onChanged: onChanged,
     );
   }
 }

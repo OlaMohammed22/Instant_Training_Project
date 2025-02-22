@@ -35,13 +35,13 @@ class ApiService {
     }
     http.Response response = await http.post(Uri.parse('$baseUrl/$url'),
         body: body, headers: headers);
-    if (response.statusCode == 200) {
+    if (jsonDecode(response.body)['status'] == 1) {
       Map<String, dynamic> data = jsonDecode(response.body);
 
       return data;
     } else {
       throw Exception(
-          'there is a problem with status code ${response.statusCode} with body ${jsonDecode(response.body)}');
+          'there is a problem with status code ${response.statusCode} with body ${jsonDecode(response.body)['message']}');
     }
   }
 
@@ -64,7 +64,7 @@ class ApiService {
       return data;
     } else {
       throw Exception(
-          'there is a problem with status code ${response.statusCode} with body ${jsonDecode(response.body)}');
+          'there is a problem with status code ${response.statusCode} with body ${jsonDecode(response.body)['message']}');
     }
   }
 }

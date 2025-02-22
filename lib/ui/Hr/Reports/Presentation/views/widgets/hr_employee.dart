@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled36/ui/Hr/Reports/Presentation/views/widgets/profilescreen.dart';
+import 'package:untitled36/ui/commen_screens/auth/presentation/views/register_view.dart';
 
 class EmployeeScreen extends StatefulWidget {
   @override
@@ -169,7 +170,13 @@ class _EmployeeScreenState extends State<EmployeeScreen> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context) {
+              return RegisterView();
+            },
+          ));
+        },
         child: Icon(
           Icons.add,
           color: Colors.white,

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitled36/ui/commen_screens/auth/presentation/views/widgets/register_view_body.dart';
 
 import '../../../../../widgets/background.dart';
+import '../../data/repository/auth_repository.dart';
+import '../bloc/auth/auth_cubit.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});
@@ -10,7 +13,10 @@ class RegisterView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Background(
-        child: RegisterViewBody(),
+        child: BlocProvider(
+          create: (context) => AuthCubit(AuthRepository()),
+          child: RegisterViewBody(),
+        ),
       ),
     );
   }
