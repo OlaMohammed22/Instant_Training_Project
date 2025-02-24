@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class UserProfile extends StatelessWidget {
-  const UserProfile({super.key, required this.name, required this.role,required this.imagePath});
+  const UserProfile(
+      {super.key,
+      required this.name,
+      required this.role,
+      required this.imagePath});
   final String name;
   final String role;
-  final  imagePath;
+  final imagePath;
 
   @override
   Widget build(BuildContext context) {

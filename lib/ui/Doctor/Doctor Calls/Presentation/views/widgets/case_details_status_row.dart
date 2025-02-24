@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:untitled36/core/utils/assets.dart';
 import 'package:untitled36/core/utils/text_styles.dart';
+
 class CaseDetailsStatusRow extends StatelessWidget {
   const CaseDetailsStatusRow({
     super.key,
@@ -25,7 +26,9 @@ class CaseDetailsStatusRow extends StatelessWidget {
         const SizedBox(
           width: 12,
         ),
-        SvgPicture.asset(Assets.pendingIcon),
+        data == 'logout'
+            ? SvgPicture.asset(Assets.checkIcon)
+            : SvgPicture.asset(Assets.pendingIcon),
       ],
     );
   }

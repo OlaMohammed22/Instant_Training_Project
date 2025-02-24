@@ -5,9 +5,10 @@ import 'package:table_calendar/table_calendar.dart';
 
 class Calender extends StatelessWidget {
   const Calender({
-    super.key, this.onDaySelected,
+    super.key,
+    this.onDaySelected,
   });
-final Function(DateTime, DateTime)? onDaySelected;
+  final Function(DateTime, DateTime)? onDaySelected;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,7 +22,7 @@ final Function(DateTime, DateTime)? onDaySelected;
         ),
       ),
       child: TableCalendar(
-        onDaySelected:onDaySelected ,
+        onDaySelected: onDaySelected,
         headerStyle: const HeaderStyle(
           titleTextStyle: TextStyle(
             fontWeight: FontWeight.w600,

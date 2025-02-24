@@ -46,7 +46,7 @@ class CaseIndexOnePart2 extends StatelessWidget {
               Expanded(
                 child: Container(
                   height: 50,
-                 // width: 150,
+                  // width: 150,
                   decoration: BoxDecoration(
                     color: Color(0xFF22C7B8),
                     borderRadius: BorderRadius.circular(6),
@@ -86,7 +86,7 @@ class CaseIndexOnePart2 extends StatelessWidget {
               Expanded(
                 child: Container(
                   height: 50,
-                 // width: 150,
+                  // width: 150,
                   decoration: BoxDecoration(
                     color: Color(0xFF22C7B8),
                     borderRadius: BorderRadius.circular(6),

@@ -4,7 +4,6 @@ import 'package:untitled36/core/utils/app_colors.dart';
 import 'package:untitled36/core/utils/text_styles.dart';
 import 'package:untitled36/ui/Hr/Reports/Presentation/views/widgets/hr_report_view_body.dart';
 
-
 class HrReportView extends StatelessWidget {
   const HrReportView({super.key});
 

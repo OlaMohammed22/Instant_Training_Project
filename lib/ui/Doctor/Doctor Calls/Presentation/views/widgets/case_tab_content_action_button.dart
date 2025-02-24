@@ -27,7 +27,6 @@ class CaseTabContentActionButtons extends StatelessWidget {
                 },
               ),
             );
-           // GoRouter.of(context).push(AppRoutes.selectNurseView);
           },
         ),
         const SizedBox(
@@ -39,7 +38,6 @@ class CaseTabContentActionButtons extends StatelessWidget {
           backgroundColor: AppColors.primaryColor,
           icon: Icons.add,
           onPressed: () {
-            
             showRequestSheet(context);
           },
         ),

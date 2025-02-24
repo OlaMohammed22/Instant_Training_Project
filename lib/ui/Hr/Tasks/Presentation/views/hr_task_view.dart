@@ -4,7 +4,6 @@ import 'package:untitled36/core/utils/app_colors.dart';
 import 'package:untitled36/core/utils/text_styles.dart';
 import 'package:untitled36/ui/Hr/Tasks/Presentation/views/widgets/hr_call_view_body.dart';
 
-
 class HrTaskView extends StatelessWidget {
   const HrTaskView({super.key});
 

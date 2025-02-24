@@ -8,27 +8,19 @@ import 'package:untitled36/ui/Doctor/case_index_one.dart';
 import 'package:untitled36/ui/Doctor/case_index_two.dart';
 import 'package:untitled36/ui/Doctor/case_index_zero.dart';
 
-
-
-
-class content_of_case extends StatelessWidget{
+class content_of_case extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-   
-   return BlocBuilder<CaseBloc, Selected_tab>(
-    builder: (context, state) {
-     if(state.selectedtabindex==0){
-         return case_index_zero();
-     }
-     else if(state.selectedtabindex==1){
-return case_index_one();
-     }
-     else{
-return case_index_two();
-     }
-    },
-   );
-   
-   
+    return BlocBuilder<CaseBloc, Selected_tab>(
+      builder: (context, state) {
+        if (state.selectedtabindex == 0) {
+          return case_index_zero();
+        } else if (state.selectedtabindex == 1) {
+          return case_index_one();
+        } else {
+          return case_index_two();
+        }
+      },
+    );
   }
 }

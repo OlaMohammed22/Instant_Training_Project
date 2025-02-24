@@ -1,11 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:untitled36/ui/Doctor/Doctor%20Calls/Presentation/view%20models/Get%20Doctor%20Call%20Details/get_doctor_call_details_bloc.dart';
 import 'package:untitled36/ui/Doctor/Doctor%20Calls/Presentation/views/widgets/case_tab_content_info.dart';
 import 'package:untitled36/ui/Recepionist/Receptionist%20Call/Presentation/views/widgets/custom_button.dart';
 
-class NurseCaseTabContent extends StatelessWidget {
+class NurseCaseTabContent extends StatefulWidget {
   const NurseCaseTabContent({
-    super.key,
+    super.key, required this.callID,
   });
+final String callID;
+  @override
+  State<NurseCaseTabContent> createState() => _NurseCaseTabContentState();
+}
+
+class _NurseCaseTabContentState extends State<NurseCaseTabContent> {
+  @override
+  void initState() {
+    BlocProvider.of<GetDoctorCallDetailsBloc>(context)
+        .add(FetchDoctorCallDetails(callID: widget.callID));
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

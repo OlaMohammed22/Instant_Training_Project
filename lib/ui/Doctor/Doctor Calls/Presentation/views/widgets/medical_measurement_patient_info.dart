@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled36/core/utils/app_colors.dart';
 import 'package:untitled36/core/utils/text_styles.dart';
+
 class MedicalPatientInfo extends StatelessWidget {
   const MedicalPatientInfo({
     super.key,

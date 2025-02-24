@@ -4,7 +4,6 @@ import 'package:untitled36/core/utils/app_colors.dart';
 import 'package:untitled36/core/utils/text_styles.dart';
 import 'package:untitled36/ui/Manager/Tasks/Presentation/views/widgets/manager_call_view_body.dart';
 
-
 class ManagerTaskView extends StatelessWidget {
   const ManagerTaskView({super.key});
 

@@ -5,8 +5,8 @@ import 'package:untitled36/ui/Nurse/Nurse%20Calls/Presentation/views/widgets/cal
 import 'package:untitled36/ui/Nurse/Nurse%20Calls/Presentation/views/widgets/nurse_case_details_tabs_content.dart';
 
 class NurseCaseDetails extends StatefulWidget {
-  const NurseCaseDetails({super.key});
-
+  const NurseCaseDetails({super.key, required this.callID});
+final String callID;
   @override
   State<NurseCaseDetails> createState() => _NurseCaseDetailsState();
 }
@@ -49,6 +49,7 @@ class _NurseCaseDetailsState extends State<NurseCaseDetails>
             Expanded(
               child: NurseCaseDetailsTabsContent(
                 tabController: _tabController,
+                callID: widget.callID,
               ),
             ),
           ],

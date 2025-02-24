@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:untitled36/resource/color.dart';
 import 'package:flutter_svg/svg.dart';
 
-
 class InputTextt {
   static inputTextStyleWithSuffixIcon(iconOrSvgLink, text, Icon suffixicon) {
     return TextField(

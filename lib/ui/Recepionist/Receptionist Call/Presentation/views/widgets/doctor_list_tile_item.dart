@@ -37,8 +37,13 @@ class _DoctorListTileItemState extends State<DoctorListTileItem> {
           const SizedBox(
             width: 18,
           ),
-          DoctorPersonalInfo(
-            doctorInfoModel: widget.list[widget.ind],
+          Flexible(
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: DoctorPersonalInfo(
+                doctorInfoModel: widget.list[widget.ind],
+              ),
+            ),
           )
         ],
       ),

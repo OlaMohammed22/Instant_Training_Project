@@ -11,8 +11,8 @@ class CaseDetails extends StatefulWidget {
 }
 
 class CaseDetailsState extends State<CaseDetails> {
-  int selectedButton = 0; 
-  
+  int selectedButton = 0;
+
   final List<Map<String, dynamic>> options = [
     {"type": "text", "value": "Cases"},
     {"type": "text", "value": "Medical Measurement"},
@@ -36,8 +36,8 @@ class CaseDetailsState extends State<CaseDetails> {
                 ...List.generate(options.length, (index) {
                   return ChoiceChip(
                     label: options[index]["type"] == "text"
-                        ? Text(options[index]["value"]) 
-                        : Icon(options[index]["value"]), 
+                        ? Text(options[index]["value"])
+                        : Icon(options[index]["value"]),
                     selected: selectedButton == index,
                     onSelected: (bool selected) {
                       setState(() {
@@ -46,25 +46,23 @@ class CaseDetailsState extends State<CaseDetails> {
                     },
                     selectedColor: Color(0xFF22C7B8),
                     labelStyle: TextStyle(
-                      color: selectedButton == index ? Colors.white : Colors.black,
+                      color:
+                          selectedButton == index ? Colors.white : Colors.black,
                     ),
                   );
                 }),
               ],
             ),
           ),
-          Expanded(child: Builder(builder: (context){
-            if(selectedButton==0){
+          Expanded(child: Builder(builder: (context) {
+            if (selectedButton == 0) {
               return case_index_zero();
-            }else if(selectedButton==1){
+            } else if (selectedButton == 1) {
               return case_index_one();
-            }else{
+            } else {
               return CaseIndexOnePart2();
             }
-          }
-          
-          
-          ))
+          }))
         ],
       ),
     );

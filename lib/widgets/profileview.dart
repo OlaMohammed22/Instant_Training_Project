@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:untitled36/resource/color.dart';
 
-
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
 
@@ -94,9 +93,7 @@ class ProfileView extends StatelessWidget {
         Positioned(
           top: 250,
           right: 20,
-          child: Stack(
-              alignment: Alignment(0, 0),
-              children: [
+          child: Stack(alignment: Alignment(0, 0), children: [
             Container(
               width: 185,
               height: 180,
@@ -192,7 +189,7 @@ class ProfileView extends StatelessWidget {
               )
             ],
           ),
-          top: 450 ,
+          top: 450,
           right: 20,
         ),
       ],

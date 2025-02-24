@@ -74,7 +74,7 @@ class _RequestSheetState extends State<RequestSheet> {
                     builder: (context) => MedicalRecord(),
                   ),
                 );
-              } else if(selectedIndex ==1){
+              } else if (selectedIndex == 1) {
                 Navigator.push(
                   context,
                   MaterialPageRoute(

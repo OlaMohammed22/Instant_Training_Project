@@ -42,8 +42,7 @@ class _SelectDoctorViewBodyState extends State<SelectDoctorViewBody> {
           width: MediaQuery.sizeOf(context).width,
           onPressed: () {
             BlocProvider.of<SelectDoctorCubit>(context).selectDoctor();
-         //   GoRouter.of(context).pop();
-         Navigator.pop(context);
+            Navigator.pop(context);
           },
         ),
         const SizedBox(

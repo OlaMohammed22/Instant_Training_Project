@@ -4,11 +4,12 @@ import 'bloc_state.dart';
 
 class CaseBloc extends Bloc<ChangingTheTab, Selected_tab> {
   CaseBloc() : super(Selected_tab(selectedtabindex: 0)) {
-    on<ChangingTheTab>((event, emit) {  
+    on<ChangingTheTab>((event, emit) {
       emit(state.copyWith(selectedtabindex: event.tabIndex));
     });
   }
 }
+
 class FingerprintBloc extends Bloc<FingerprintEvent, FingerprintState> {
   FingerprintBloc() : super(FingerprintInitial()) {
     on<VerifyFingerprint>(_onVerifyFingerprint);
@@ -17,10 +18,11 @@ class FingerprintBloc extends Bloc<FingerprintEvent, FingerprintState> {
   Future<void> _onVerifyFingerprint(
       VerifyFingerprint event, Emitter<FingerprintState> emit) async {
     emit(FingerprintLoading());
-    await Future.delayed(Duration(seconds: 2)); 
+    await Future.delayed(Duration(seconds: 2));
     emit(FingerprintSuccess());
   }
 }
+
 class LogicBloc extends Bloc<ChangingTheTab, Selected_tab> {
   LogicBloc() : super(Selected_tab(selectedtabindex: 0)) {
     on<ChangingTheTab>((event, emit) {
@@ -28,4 +30,3 @@ class LogicBloc extends Bloc<ChangingTheTab, Selected_tab> {
     });
   }
 }
-

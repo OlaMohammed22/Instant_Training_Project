@@ -8,7 +8,6 @@ class DashboardCard extends StatelessWidget {
   final VoidCallback onTap;
   final double hight;
   final double width;
-   
 
   const DashboardCard({
     super.key,
@@ -16,10 +15,8 @@ class DashboardCard extends StatelessWidget {
     required this.backgroundSvgPath,
     required this.svgIconPath,
     required this.onTap,
-   required this.hight,
-   required this.width,
-    
-
+    required this.hight,
+    required this.width,
   });
 
   @override
@@ -34,9 +31,9 @@ class DashboardCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             child: SvgPicture.asset(
               backgroundSvgPath,
-             width: double.infinity,
+              width: double.infinity,
               height: double.infinity,
-             //fit: BoxFit.cover,
+              //fit: BoxFit.cover,
             ),
           ),
           Center(

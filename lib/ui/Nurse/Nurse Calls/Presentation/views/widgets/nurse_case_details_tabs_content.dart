@@ -5,10 +5,11 @@ import 'package:untitled36/ui/Nurse/Nurse%20Calls/Presentation/views/widgets/nur
 class NurseCaseDetailsTabsContent extends StatelessWidget {
   const NurseCaseDetailsTabsContent({
     super.key,
-    required TabController tabController,
+    required TabController tabController, required this.callID,
   }) : _tabController = tabController;
 
   final TabController _tabController;
+  final String callID;
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +17,8 @@ class NurseCaseDetailsTabsContent extends StatelessWidget {
       controller: _tabController,
       clipBehavior: Clip.none,
       physics: const NeverScrollableScrollPhysics(),
-      children: const [
-        NurseCaseTabContent(),
+      children:  [
+        NurseCaseTabContent(callID: callID,),
         MedicalMeasurementTanContent(),
         SizedBox(),
       ],

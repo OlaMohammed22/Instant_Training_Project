@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:insta_image_viewer/insta_image_viewer.dart';
 import 'package:untitled36/core/utils/app_colors.dart';
 import 'package:untitled36/core/utils/assets.dart';
+
 class MedicalRecordAnalysis extends StatelessWidget {
   const MedicalRecordAnalysis({
     super.key,

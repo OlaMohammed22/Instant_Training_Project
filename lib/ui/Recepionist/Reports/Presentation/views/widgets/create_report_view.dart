@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class CreateReportScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(

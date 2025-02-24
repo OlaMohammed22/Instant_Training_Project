@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitled36/core/utils/app_colors.dart';
 import 'package:untitled36/core/utils/text_styles.dart';
+import 'package:untitled36/ui/Doctor/Doctor%20Calls/Presentation/view%20models/Get%20All%20Nurse%20Bloc/get_all_nurse_bloc.dart';
 import 'package:untitled36/ui/Doctor/Doctor%20Calls/Presentation/views/widgets/select_nurse_view_body.dart';
 
 class SelectNurseView extends StatelessWidget {
@@ -22,14 +24,16 @@ class SelectNurseView extends StatelessWidget {
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
-            //GoRouter.of(context).pop();
           },
           icon: const Icon(
             Icons.close,
           ),
         ),
       ),
-      body: const SelectNurseViewBody(),
+      body: BlocProvider(
+        create: (context) => GetAllNurseBloc(),
+        child: const SelectNurseViewBody(),
+      ),
     );
   }
 }

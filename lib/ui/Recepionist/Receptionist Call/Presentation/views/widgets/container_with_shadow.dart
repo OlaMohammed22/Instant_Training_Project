@@ -10,10 +10,7 @@ class ContainerWithShadow extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         boxShadow: [
-          BoxShadow(
-              color: Color(0xffE5E5E5),
-              blurRadius: 10,
-              spreadRadius: -5)
+          BoxShadow(color: Color(0xffE5E5E5), blurRadius: 10, spreadRadius: -5)
         ],
       ),
     );

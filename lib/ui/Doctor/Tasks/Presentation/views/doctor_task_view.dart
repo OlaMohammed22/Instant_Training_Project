@@ -4,7 +4,6 @@ import 'package:untitled36/core/utils/app_colors.dart';
 import 'package:untitled36/core/utils/text_styles.dart';
 import 'package:untitled36/ui/Doctor/Tasks/Presentation/views/widgets/doctor_call_view_body.dart';
 
-
 class DoctorTaskView extends StatelessWidget {
   const DoctorTaskView({super.key});
 

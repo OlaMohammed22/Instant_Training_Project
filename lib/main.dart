@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:untitled36/bloc/bloc.dart';
+import 'package:untitled36/ui/Doctor/Doctor%20Calls/Presentation/view%20models/Get%20Doctor%20Call%20Details/get_doctor_call_details_bloc.dart';
+import 'package:untitled36/ui/Recepionist/Receptionist%20Call/Presentation/view%20model/Get%20All%20Calls/get_all_calls_bloc.dart';
 import 'package:untitled36/ui/Recepionist/Receptionist%20Call/Presentation/view%20model/cubit/select_doctor_cubit.dart';
 import 'package:untitled36/ui/commen_screens/loading_screen.dart';
 
@@ -27,6 +29,12 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => SelectDoctorCubit(),
+        ),
+        BlocProvider(
+          create: (context) => GetAllCallsBloc(),
+        ),
+        BlocProvider(
+          create: (context) => GetDoctorCallDetailsBloc(),
         )
       ],
       child: ScreenUtilInit(

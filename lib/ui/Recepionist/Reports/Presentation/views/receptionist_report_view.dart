@@ -4,7 +4,6 @@ import 'package:untitled36/core/utils/app_colors.dart';
 import 'package:untitled36/core/utils/text_styles.dart';
 import 'package:untitled36/ui/Recepionist/Reports/Presentation/views/widgets/receptionist_report_view_body.dart';
 
-
 class ReceptionistReportView extends StatelessWidget {
   const ReceptionistReportView({super.key});
 

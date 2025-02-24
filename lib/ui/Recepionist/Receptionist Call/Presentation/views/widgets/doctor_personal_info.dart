@@ -18,6 +18,7 @@ class DoctorPersonalInfo extends StatelessWidget {
         Text(
           doctorInfoModel.name,
           style: TextStyles.style16Medium,
+          overflow: TextOverflow.ellipsis,
         ),
         Text(
           doctorInfoModel.hisTitle,

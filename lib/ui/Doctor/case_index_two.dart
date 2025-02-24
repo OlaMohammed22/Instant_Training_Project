@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class case_index_two extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -103,10 +102,7 @@ class case_index_two extends StatelessWidget {
   }
 }
 
-    
-    
-    
-    /*Column(
+/*Column(
 mainAxisAlignment: MainAxisAlignment.start,
 crossAxisAlignment: CrossAxisAlignment.start,
 children: [

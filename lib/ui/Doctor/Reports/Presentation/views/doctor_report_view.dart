@@ -3,7 +3,6 @@ import 'package:untitled36/core/utils/app_colors.dart';
 import 'package:untitled36/core/utils/text_styles.dart';
 import 'package:untitled36/ui/Doctor/Reports/Presentation/views/widgets/doctor_report_view_body.dart';
 
-
 class DoctorReportView extends StatelessWidget {
   const DoctorReportView({super.key});
 

@@ -7,36 +7,39 @@ import 'package:untitled36/ui/Recepionist/Receptionist%20Call/Presentation/views
 class ReceptionistCallHeader extends StatelessWidget {
   const ReceptionistCallHeader({
     super.key,
+    required this.calenderTextEditingController,
   });
-
+  final TextEditingController calenderTextEditingController;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        const Expanded(
-          child: CalenderBar(),
-        ),
-        const SizedBox(
-          width: 16,
-        ),
-        InkWell(
-          onTap: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) {
-                  return ReceptionistCreateCallView();
-                },
-              ),
-            );
-            // GoRouter.of(context).push(
-            //   AppRoutes.receptionistCreateCallView,
-            // );
-          },
-          child: SvgPicture.asset(
-            Assets.createCallIcon,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Row(
+        children: [
+          Expanded(
+            child: CalenderBar(
+              calenderTextEditingController: calenderTextEditingController,
+            ),
           ),
-        )
-      ],
+          const SizedBox(
+            width: 16,
+          ),
+          InkWell(
+            onTap: () async {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return ReceptionistCreateCallView();
+                  },
+                ),
+              );
+            },
+            child: SvgPicture.asset(
+              Assets.createCallIcon,
+            ),
+          )
+        ],
+      ),
     );
   }
 }

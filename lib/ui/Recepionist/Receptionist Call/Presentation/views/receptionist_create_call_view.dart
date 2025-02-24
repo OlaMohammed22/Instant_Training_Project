@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitled36/core/utils/app_colors.dart';
 import 'package:untitled36/core/utils/text_styles.dart';
+import 'package:untitled36/ui/Recepionist/Receptionist%20Call/Presentation/view%20model/Create%20Bloc/create_call_bloc.dart';
 import 'package:untitled36/ui/Recepionist/Receptionist%20Call/Presentation/views/widgets/receptionist_create_call_view_body.dart';
 
 class ReceptionistCreateCallView extends StatelessWidget {
@@ -20,7 +22,10 @@ class ReceptionistCreateCallView extends StatelessWidget {
           style: TextStyles.style16Regular,
         ),
       ),
-      body: const ReceptionistCreateCallViewBody(),
+      body: BlocProvider(
+        create: (context) => CreateCallBloc(),
+        child: const ReceptionistCreateCallViewBody(),
+      ),
     );
   }
 }

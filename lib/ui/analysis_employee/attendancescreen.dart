@@ -31,7 +31,8 @@ class AttendanceScreen extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 14, fontWeight: FontWeight.bold)),
                     Text('Specialist, Doctor',
-                        style: TextStyle(fontSize: 12, color: Color(0xff22C7B8))),
+                        style:
+                            TextStyle(fontSize: 12, color: Color(0xff22C7B8))),
                   ],
                 ),
                 const Spacer(),
@@ -68,18 +69,19 @@ class AttendanceScreen extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(left: 13),
                           child: Text('09:00 AM',
-                              style:
-                                  TextStyle(color: Color(0xff22C7BB), fontSize: 11)),
+                              style: TextStyle(
+                                  color: Color(0xff22C7BB), fontSize: 11)),
                         ),
                         SizedBox(height: height * 0.03),
                         Padding(
                           padding: const EdgeInsets.only(bottom: 9, left: 13),
                           child: InkWell(
                             onTap: () {
-                             Navigator.push(
+                              Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => FingerprintScreen()));
+                                      builder: (context) =>
+                                          FingerprintScreen()));
                             },
                             child: Image.asset('assets/opop.png'),
                           ),

@@ -49,8 +49,8 @@ class TaskView extends StatelessWidget {
               hint: "Search For Doctor",
               onSaved: (value) {},
               validator: (value) {
-               // return FormValidation.optionalField(value);
-              return null;
+                // return FormValidation.optionalField(value);
+                return null;
               },
             ),
             const SizedBox(
@@ -76,7 +76,6 @@ class TaskView extends StatelessWidget {
   }
 }
 
-
 class SelectDoctorListTileItemsListInManager extends StatefulWidget {
   const SelectDoctorListTileItemsListInManager({
     super.key,
@@ -87,7 +86,8 @@ class SelectDoctorListTileItemsListInManager extends StatefulWidget {
       _SelectDoctorListTileItemsListInManagerState();
 }
 
-class _SelectDoctorListTileItemsListInManagerState extends State<SelectDoctorListTileItemsListInManager> {
+class _SelectDoctorListTileItemsListInManagerState
+    extends State<SelectDoctorListTileItemsListInManager> {
   bool selected = false;
   DoctorInfoModel? groupValue;
 

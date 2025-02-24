@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 /*class SearchScreen extends StatelessWidget {
 
   @override
@@ -97,87 +96,96 @@ class SearchView extends StatelessWidget {
     );
   }
 }*/
-class  SearchScreen extends StatelessWidget{
+class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     appBar: AppBar(
-      
-      title: Text('Select Doctor'),
-      centerTitle: true,
-      leading: IconButton(onPressed: (){
-Navigator.pop(context);
-      }, icon: Icon(Icons.close)),
-     ),
-     body: Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Container(
-          height: 40,
-          width: 11500,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(4),
-            border: Border.all(
-              color: Colors.grey
-            )
-          ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 7,vertical: 7),
-            child: TextField(
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: 'search for doctors', 
-                prefixIcon: Icon(Icons.search)
+      appBar: AppBar(
+        title: Text('Select Doctor'),
+        centerTitle: true,
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.close)),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Container(
+            height: 40,
+            width: 11500,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(4),
+                border: Border.all(color: Colors.grey)),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 7),
+              child: TextField(
+                decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'search for doctors',
+                    prefixIcon: Icon(Icons.search)),
               ),
-              
-            
             ),
           ),
-        ),
-        SizedBox(height: 10,),
-        ListTile(
-          leading: Image.asset('assets/doctor.png',),
-          title: Text('Dr.Salma Ahmed'),
-          subtitle: Text('specialist-doctor'),
-          trailing: CircleAvatar(
-  radius: 6,
-  backgroundColor: Colors.green, 
-),
-        ),
-        SizedBox(height: 10,),
-        ListTile(
-          leading: Image.asset('assets/doctor.png',),
-          title: Text('Dr.Salma Ahmed'),
-          subtitle: Text('specialist-doctor'),
-          trailing: CircleAvatar(
-  radius: 6,
-  backgroundColor: Colors.grey,
- 
-   
-),
-        ), 
-        SizedBox(height: 10,),
-        ListTile(
-          leading: Image.asset('assets/doctor.png',),
-          title: Text('Dr.Salma Ahmed'),
-          subtitle: Text('specialist-doctor'),
-          trailing: CircleAvatar(
-  radius: 6,
-  backgroundColor: Colors.grey, 
-),
-        ),
-        SizedBox(height: 10,),
-        ListTile(
-          leading: Image.asset('assets/doctor.png',),
-          title: Text('Dr.Salma Ahmed'),
-          subtitle: Text('specialist-doctor'),
-          trailing: CircleAvatar(
-  radius: 6,
-  backgroundColor: Colors.grey, 
-),
-        )
-      ],
-     ),
+          SizedBox(
+            height: 10,
+          ),
+          ListTile(
+            leading: Image.asset(
+              'assets/doctor.png',
+            ),
+            title: Text('Dr.Salma Ahmed'),
+            subtitle: Text('specialist-doctor'),
+            trailing: CircleAvatar(
+              radius: 6,
+              backgroundColor: Colors.green,
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          ListTile(
+            leading: Image.asset(
+              'assets/doctor.png',
+            ),
+            title: Text('Dr.Salma Ahmed'),
+            subtitle: Text('specialist-doctor'),
+            trailing: CircleAvatar(
+              radius: 6,
+              backgroundColor: Colors.grey,
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          ListTile(
+            leading: Image.asset(
+              'assets/doctor.png',
+            ),
+            title: Text('Dr.Salma Ahmed'),
+            subtitle: Text('specialist-doctor'),
+            trailing: CircleAvatar(
+              radius: 6,
+              backgroundColor: Colors.grey,
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          ListTile(
+            leading: Image.asset(
+              'assets/doctor.png',
+            ),
+            title: Text('Dr.Salma Ahmed'),
+            subtitle: Text('specialist-doctor'),
+            trailing: CircleAvatar(
+              radius: 6,
+              backgroundColor: Colors.grey,
+            ),
+          )
+        ],
+      ),
     );
   }
 }

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:untitled36/core/utils/app_colors.dart';
 import 'package:untitled36/core/utils/text_styles.dart';
 import 'package:untitled36/ui/Doctor/Doctor%20Calls/Presentation/views/widgets/case_details_view_body.dart';
+
 class CaseDetailsView extends StatelessWidget {
   const CaseDetailsView({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

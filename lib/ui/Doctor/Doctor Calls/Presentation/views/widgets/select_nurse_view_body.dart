@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:untitled36/core/utils/form_validations.dart';
+import 'package:untitled36/ui/Doctor/Doctor%20Calls/Presentation/view%20models/Get%20All%20Nurse%20Bloc/get_all_nurse_bloc.dart';
+import 'package:untitled36/ui/Doctor/Doctor%20Calls/Presentation/view%20models/Get%20All%20Nurse%20Bloc/get_all_nurse_event.dart';
 import 'package:untitled36/ui/Doctor/Doctor%20Calls/Presentation/views/widgets/nurse_list_tile_items_list.dart';
 import 'package:untitled36/ui/Recepionist/Receptionist%20Call/Presentation/views/widgets/custom_button.dart';
 import 'package:untitled36/ui/Recepionist/Receptionist%20Call/Presentation/views/widgets/doctor_search_text_form_field.dart';
@@ -13,6 +16,14 @@ class SelectNurseViewBody extends StatefulWidget {
 }
 
 class _SelectNurseViewBodyState extends State<SelectNurseViewBody> {
+  @override
+  void initState() {
+    BlocProvider.of<GetAllNurseBloc>(context).add(
+      GetAllNurseEvent(),
+    );
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -40,7 +51,6 @@ class _SelectNurseViewBodyState extends State<SelectNurseViewBody> {
           width: MediaQuery.sizeOf(context).width,
           onPressed: () {
             Navigator.pop(context);
-           // GoRouter.of(context).pop();
           },
         ),
         const SizedBox(
@@ -50,5 +60,3 @@ class _SelectNurseViewBodyState extends State<SelectNurseViewBody> {
     );
   }
 }
-
-

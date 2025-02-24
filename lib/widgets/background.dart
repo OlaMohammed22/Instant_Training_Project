@@ -30,7 +30,6 @@ class Background extends StatelessWidget {
                       width: 250,
                       height: 350,
                     )),
-
                 Positioned(
                     bottom: 0,
                     right: 0,
@@ -48,7 +47,6 @@ class Background extends StatelessWidget {
                       height: 350,
                     )),
                 child,
-
               ],
             )));
   }
