@@ -6,6 +6,9 @@ import 'package:untitled36/ui/analysis_employee/attendancescreen.dart';
 import 'package:untitled36/widgets/buildcard.dart';
 import 'package:untitled36/widgets/userprofile.dart';
 
+import '../Hr/Reports/Presentation/cubit/profile/profile_cubit.dart';
+import '../Hr/Reports/Presentation/views/widgets/profilescreen.dart';
+
 class Nursescreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -24,9 +27,18 @@ class Nursescreen extends StatelessWidget {
                     children: [
                       SizedBox(height: height * 0.01),
                       UserProfile(
-                          name: 'Salma Ali',
-                          role: 'Specialist, Nurse',
-                          imagePath: 'assets/ssss.png'),
+                        name: 'Salma Ali',
+                        role: 'Specialist, Nurse',
+                        imagePath: 'assets/ssss.png',
+                        onTap: () {
+                          context.read<ProfileCubit>().showProfile(null);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ProfileScreen()),
+                          );
+                        },
+                      ),
                       SizedBox(height: height * 0.02),
                       GridView.count(
                         crossAxisCount: 2,

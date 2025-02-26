@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitled36/bloc/bloc.dart';
-import 'package:untitled36/ui/Hr/Reports/Presentation/views/widgets/hr_employee.dart';
 import 'package:untitled36/ui/Manager/Tasks/Presentation/views/manager_task_view.dart';
 import 'package:untitled36/ui/Manager/cases.dart';
 import 'package:untitled36/ui/analysis_employee/attendancescreen.dart';
 import 'package:untitled36/widgets/buildcard.dart';
 import 'package:untitled36/widgets/userprofile.dart';
+
+import '../Hr/Reports/Presentation/cubit/profile/profile_cubit.dart';
+import '../Hr/Reports/Presentation/views/widgets/profilescreen.dart';
+import '../Hr/employee/presentation/views/employee_view.dart';
 
 class Mangerscreen extends StatelessWidget {
   @override
@@ -26,9 +29,18 @@ class Mangerscreen extends StatelessWidget {
                 children: [
                   SizedBox(height: height * 0.01),
                   UserProfile(
-                      name: 'Mohamed Ahmed',
-                      role: 'Specialist, Manger',
-                      imagePath: 'assets/mmm.png'),
+                    name: 'Mohamed Ahmed',
+                    role: 'Specialist, Manger',
+                    imagePath: 'assets/mmm.png',
+                    onTap: () {
+                      context.read<ProfileCubit>().showProfile(null);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProfileScreen()),
+                      );
+                    },
+                  ),
                   SizedBox(height: height * 0.02),
                   GridView.count(
                     crossAxisCount: 2,
@@ -121,7 +133,7 @@ class Mangerscreen extends StatelessWidget {
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (context) {
-                              return EmployeeScreen();
+                              return EmployeeView();
                             },
                           ),
                         );

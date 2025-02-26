@@ -1,8 +1,8 @@
 import 'package:untitled36/core/utils/storage_service.dart';
 
 import '../../../../../core/utils/api_service.dart';
+import '../../../../Hr/Reports/data/model/user_details_model.dart';
 import '../model/register_model.dart';
-import '../model/user_details_model.dart';
 
 class AuthRepository {
   final ApiService _apiService = ApiService();

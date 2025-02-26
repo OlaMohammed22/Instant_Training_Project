@@ -20,11 +20,11 @@ class RegisterViewBody extends StatelessWidget {
     final TextEditingController passwordController = TextEditingController();
     final TextEditingController firstNameController = TextEditingController();
     final TextEditingController lastNameController = TextEditingController();
+    final TextEditingController addressController = TextEditingController();
+    final TextEditingController mobileController = TextEditingController();
     String? gender;
     String? birthday;
     String? status;
-    final TextEditingController addressController = TextEditingController();
-    final TextEditingController mobileController = TextEditingController();
     String? specialist;
 
     return SingleChildScrollView(

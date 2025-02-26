@@ -15,7 +15,7 @@ class ApiService {
     http.Response response =
         await http.get(Uri.parse('$baseUrl/$url'), headers: headers);
 
-    if (response.statusCode == 200) {
+    if (jsonDecode(response.body)['status'] == 1) {
       return jsonDecode(response.body);
     } else {
       throw Exception(
@@ -58,7 +58,7 @@ class ApiService {
     print('url = $url body = $body token = $token ');
     http.Response response =
         await http.put(Uri.parse(url), body: body, headers: headers);
-    if (response.statusCode == 200) {
+    if (jsonDecode(response.body)['status'] == 1) {
       Map<String, dynamic> data = jsonDecode(response.body);
       print(data);
       return data;

@@ -27,23 +27,23 @@ class LoginViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    _checkLoginStatus(context);
-
     final TextEditingController emailController = TextEditingController();
     final TextEditingController passwordController = TextEditingController();
 
+    _checkLoginStatus(context);
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: BlocConsumer<AuthCubit, AuthState>(
           listener: (context, state) {
             if (state is LoginLoading) {
-              showDialog(
+              void _showDialog = showDialog(
                 context: context,
                 barrierDismissible: false,
                 builder: (_) =>
                     const Center(child: CircularProgressIndicator()),
               );
+              return _showDialog;
             } else if (state is LoginSuccess) {
               Navigator.pushReplacement(
                 context,

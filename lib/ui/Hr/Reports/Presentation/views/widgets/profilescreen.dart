@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:untitled36/ui/Hr/Reports/Presentation/cubit/profile/profile_cubit.dart';
+
+import '../../cubit/profile/profile_state.dart';
+
 class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -16,64 +21,82 @@ class ProfileScreen extends StatelessWidget {
           },
         ),
       ),
-      body: Column(
-        children: [
-          const SizedBox(height: 10),
-          Center(
-            child: Stack(
-              alignment: Alignment.center,
+      body: BlocBuilder<ProfileCubit, ProfileState>(
+        builder: (context, state) {
+          if (state is ProfileLoaded) {
+            final user = state.user.data;
+
+            return Column(
               children: [
-                Container(
-                  width: 120,
-                  height: 120,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.white.withOpacity(0.3),
+                const SizedBox(height: 10),
+                Center(
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Container(
+                        width: 120,
+                        height: 120,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white.withOpacity(0.3),
+                        ),
+                      ),
+                      const CircleAvatar(
+                        radius: 50,
+                        backgroundImage: NetworkImage(
+                            'https://th.bing.com/th/id/OIP.IGNf7GuQaCqz_RPq5wCkPgHaLH?w=202&h=303&c=7&r=0&o=5&dpr=1.5&pid=1.7'), // استبدلها بالصورة الفعلية
+                      ),
+                    ],
                   ),
                 ),
-                const CircleAvatar(
-                  radius: 50,
-                  backgroundImage: NetworkImage(
-                      'https://th.bing.com/th/id/OIP.IGNf7GuQaCqz_RPq5wCkPgHaLH?w=202&h=303&c=7&r=0&o=5&dpr=1.5&pid=1.7'), // استبدلها بالصورة الفعلية
+                const SizedBox(height: 10),
+                Text(
+                  "${user?.firstName} ${user?.lastName}",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Expanded(
+                  child: Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(20),
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(30),
+                        topRight: Radius.circular(30),
+                      ),
+                    ),
+                    child: Column(
+                      children: [
+                        profileDetail(Icons.medical_services,
+                            "Specialist - ${user?.specialist}"),
+                        profileDetail(
+                            user?.gender == 'Male' ? Icons.male : Icons.female,
+                            user?.gender ?? ''),
+                        profileDetail(
+                            Icons.calendar_today, user?.birthday ?? ''),
+                        profileDetail(Icons.location_on, user?.address ?? ''),
+                        profileDetail(Icons.favorite, user?.status ?? ''),
+                        profileDetail(Icons.email, user?.email ?? ''),
+                        profileDetail(Icons.phone, user?.mobile ?? ''),
+                      ],
+                    ),
+                  ),
                 ),
               ],
-            ),
-          ),
-          const SizedBox(height: 10),
-          const Text(
-            "Ebrahem Elzainy",
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-          ),
-          const SizedBox(height: 10),
-          Expanded(
-            child: Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(20),
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30),
-                  topRight: Radius.circular(30),
-                ),
-              ),
-              child: Column(
-                children: [
-                  profileDetail(Icons.medical_services, "Specialist - Doctor"),
-                  profileDetail(Icons.male, "Male"),
-                  profileDetail(Icons.calendar_today, "29-03-1997"),
-                  profileDetail(Icons.location_on, "Mansoura, Shirben"),
-                  profileDetail(Icons.favorite, "Single"),
-                  profileDetail(Icons.email, "ebrahemelzainy@gmail.com"),
-                  profileDetail(Icons.phone, "096521145523"),
-                ],
-              ),
-            ),
-          ),
-        ],
+            );
+          } else if (state is ProfileFailure) {
+            return Center(
+              child: Text(state.erMessage),
+            );
+          } else {
+            return const Center(child: CircularProgressIndicator());
+          }
+        },
       ),
     );
   }

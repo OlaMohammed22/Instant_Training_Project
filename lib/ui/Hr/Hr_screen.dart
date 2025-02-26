@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitled36/bloc/bloc.dart';
 import 'package:untitled36/ui/Hr/Reports/Presentation/views/hr_report_view.dart';
-import 'package:untitled36/ui/Hr/Reports/Presentation/views/widgets/hr_employee.dart';
 import 'package:untitled36/ui/Hr/Tasks/Presentation/views/hr_task_view.dart';
+import 'package:untitled36/ui/Hr/employee/presentation/views/employee_view.dart';
 import 'package:untitled36/ui/analysis_employee/attendancescreen.dart';
 import 'package:untitled36/widgets/Dashboardcard.dart';
 import 'package:untitled36/widgets/userprofile.dart';
+
+import 'Reports/Presentation/cubit/profile/profile_cubit.dart';
+import 'Reports/Presentation/views/widgets/profilescreen.dart';
 
 class Hrscreen extends StatelessWidget {
   const Hrscreen({super.key});
@@ -25,6 +28,14 @@ class Hrscreen extends StatelessWidget {
                     name: 'Ebrahem Elzainy',
                     role: 'Specialist, HR',
                     imagePath: 'assets/hrrr.png',
+                    onTap: () {
+                      context.read<ProfileCubit>().showProfile(null);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProfileScreen()),
+                      );
+                    },
                   ),
                   SizedBox(height: 40),
                   Expanded(
@@ -44,7 +55,7 @@ class Hrscreen extends StatelessWidget {
                             Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return EmployeeScreen();
+                                  return EmployeeView();
                                 },
                               ),
                             );

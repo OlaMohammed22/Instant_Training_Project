@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:untitled36/bloc/bloc.dart';
+import 'package:untitled36/ui/Hr/Reports/Presentation/cubit/profile/profile_cubit.dart';
+import 'package:untitled36/ui/Hr/Reports/data/repository/profile_repository.dart';
+import 'package:untitled36/ui/Hr/employee/presentation/cubit/users_by_type_cubit.dart';
 import 'package:untitled36/ui/Recepionist/Receptionist%20Call/Presentation/view%20model/cubit/select_doctor_cubit.dart';
 import 'package:untitled36/ui/commen_screens/loading_screen.dart';
 
@@ -27,7 +30,13 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => SelectDoctorCubit(),
-        )
+        ),
+        BlocProvider(
+          create: (context) => ProfileCubit(ProfileRepository()),
+        ),
+        BlocProvider(
+          create: (context) => UsersByTypeCubit(),
+        ),
       ],
       child: ScreenUtilInit(
         designSize: Size(MediaQuery.sizeOf(context).width,

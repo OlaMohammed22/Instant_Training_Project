@@ -8,6 +8,9 @@ import 'package:untitled36/ui/analysis_employee/attendancescreen.dart';
 import 'package:untitled36/widgets/Dashboardcard.dart';
 import 'package:untitled36/widgets/userprofile.dart';
 
+import '../Hr/Reports/Presentation/cubit/profile/profile_cubit.dart';
+import '../Hr/Reports/Presentation/views/widgets/profilescreen.dart';
+
 class Receptionistscreen extends StatelessWidget {
   const Receptionistscreen({super.key});
 
@@ -25,6 +28,14 @@ class Receptionistscreen extends StatelessWidget {
                     name: 'Ebrahem Elzainy',
                     role: 'Specialist, Receptionist',
                     imagePath: 'assets/ss.png',
+                    onTap: () {
+                      context.read<ProfileCubit>().showProfile(null);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProfileScreen()),
+                      );
+                    },
                   ),
                   SizedBox(height: 40),
                   Expanded(

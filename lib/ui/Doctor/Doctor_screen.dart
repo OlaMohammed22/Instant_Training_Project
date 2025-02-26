@@ -9,6 +9,9 @@ import 'package:untitled36/ui/analysis_employee/attendancescreen.dart';
 import 'package:untitled36/widgets/buildcard.dart';
 import 'package:untitled36/widgets/userprofile.dart';
 
+import '../Hr/Reports/Presentation/cubit/profile/profile_cubit.dart';
+import '../Hr/Reports/Presentation/views/widgets/profilescreen.dart';
+
 class Doctorscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -27,9 +30,18 @@ class Doctorscreen extends StatelessWidget {
                     children: [
                       SizedBox(height: height * 0.01),
                       UserProfile(
-                          name: 'Mahmoud Ahmed',
-                          role: 'Specialist, Doctor',
-                          imagePath: 'assets/hjk.png'),
+                        name: 'Mahmoud Ahmed',
+                        role: 'Specialist, Doctor',
+                        imagePath: 'assets/hjk.png',
+                        onTap: () {
+                          context.read<ProfileCubit>().showProfile(null);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ProfileScreen()),
+                          );
+                        },
+                      ),
                       SizedBox(height: height * 0.02),
                       GridView.count(
                         crossAxisCount: 2,
@@ -40,7 +52,8 @@ class Doctorscreen extends StatelessWidget {
                         childAspectRatio: 0.91,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(top: 19, bottom: 0.2),
+                            padding:
+                                const EdgeInsets.only(top: 19, bottom: 0.2),
                             child: BuildCard(
                               backGround: 'assets/abc.png',
                               title: 'Calls   .',
@@ -69,7 +82,7 @@ class Doctorscreen extends StatelessWidget {
                               hight: 230,
                               width: 240,
                               onTap: () {
-                                 Navigator.of(context).push(
+                                Navigator.of(context).push(
                                   MaterialPageRoute(
                                     builder: (context) {
                                       return DoctorTaskView();
