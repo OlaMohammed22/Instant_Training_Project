@@ -82,8 +82,8 @@ class LoginViewBody extends StatelessWidget {
                 ),
                 const SizedBox(height: 85),
                 CustomAuthTextField(
-                  iconPath: 'assets/icons/phone.png',
-                  hintText: 'Phone Number',
+                  iconPath: 'assets/icons/email.png',
+                  hintText: 'Email',
                   controller: emailController,
                 ),
                 const SizedBox(height: 28),

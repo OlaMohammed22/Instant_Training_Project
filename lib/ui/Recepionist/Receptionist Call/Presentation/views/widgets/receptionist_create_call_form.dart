@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled36/core/utils/form_validations.dart';
-import 'package:untitled36/ui/Recepionist/Receptionist%20Call/Presentation/views/select_doctor_view.dart';
+import 'package:untitled36/ui/Doctor/Doctor%20Calls/Presentation/views/select_employee_view.dart';
 import 'package:untitled36/ui/Recepionist/Receptionist%20Call/Presentation/views/send_call_request_successfully_view.dart';
 import 'package:untitled36/ui/Recepionist/Receptionist%20Call/Presentation/views/widgets/custom_button.dart';
 import 'package:untitled36/ui/Recepionist/Receptionist%20Call/Presentation/views/widgets/custom_list_tile.dart';
@@ -66,7 +66,7 @@ class _ReceptionistCreateCallFormState
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return SelectDoctorView();
+                    return SelectEmployeeView(type: 'Doctor');
                   },
                 ),
               );
