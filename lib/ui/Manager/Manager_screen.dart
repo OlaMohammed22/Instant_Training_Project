@@ -29,9 +29,6 @@ class Mangerscreen extends StatelessWidget {
                 children: [
                   SizedBox(height: height * 0.01),
                   UserProfile(
-                    name: 'Mohamed Ahmed',
-                    role: 'Specialist, Manger',
-                    imagePath: 'assets/mmm.png',
                     onTap: () {
                       context.read<ProfileCubit>().showProfile(null);
                       Navigator.push(

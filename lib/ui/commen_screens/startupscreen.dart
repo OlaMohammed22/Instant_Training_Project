@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitled36/resource/color.dart';
 import 'package:untitled36/ui/Doctor/Doctor_screen.dart';
 import 'package:untitled36/ui/Hr/Hr_screen.dart';
@@ -7,6 +8,8 @@ import 'package:untitled36/ui/Nurse/nurse_screen.dart';
 import 'package:untitled36/ui/Recepionist/Recipionist_screen.dart';
 import 'package:untitled36/ui/analysis_employee/analysisemployee.dart';
 import 'package:untitled36/widgets/background.dart';
+
+import '../Hr/Reports/Presentation/cubit/profile/profile_cubit.dart';
 
 class StartUpView extends StatelessWidget {
   const StartUpView({super.key});
@@ -26,7 +29,8 @@ class StartUpView extends StatelessWidget {
               children: [
                 Text(
                   "Prototype Map",
-                  style: TextStyle(color: ColorManger.primaryGreen, fontSize: 24),
+                  style:
+                      TextStyle(color: ColorManger.primaryGreen, fontSize: 24),
                 ),
                 SizedBox(height: mediaQuery.height * 0.05),
                 Row(
@@ -34,7 +38,8 @@ class StartUpView extends StatelessWidget {
                   children: [
                     buildButton(context, "Doctor", 83, Doctorscreen()),
                     SizedBox(width: 13),
-                    buildButton(context, "Receptionist", 152, Receptionistscreen()),
+                    buildButton(
+                        context, "Receptionist", 152, Receptionistscreen()),
                     SizedBox(width: 13),
                     buildButton(context, "Nurse", 83, Nursescreen()),
                   ],
@@ -43,7 +48,8 @@ class StartUpView extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    buildButton(context, "Analysis Employee", 170, Analysisscreen()),
+                    buildButton(
+                        context, "Analysis Employee", 170, Analysisscreen()),
                     SizedBox(width: 13),
                     buildButton(context, "Manger", 100, Mangerscreen()),
                     SizedBox(width: 13),
@@ -58,10 +64,13 @@ class StartUpView extends StatelessWidget {
     );
   }
 
-  Widget buildButton(BuildContext context, String title, double width, Widget screen) {
+  Widget buildButton(
+      BuildContext context, String title, double width, Widget screen) {
     return InkWell(
       onTap: () {
         type = title;
+        context.read<ProfileCubit>().showProfile(null);
+
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => screen),
@@ -69,7 +78,8 @@ class StartUpView extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(color: ColorManger.grey, width: 1, style: BorderStyle.solid),
+          border: Border.all(
+              color: ColorManger.grey, width: 1, style: BorderStyle.solid),
           borderRadius: BorderRadius.circular(10),
         ),
         width: width,

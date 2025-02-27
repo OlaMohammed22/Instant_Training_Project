@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:untitled36/core/utils/app_colors.dart';
 import 'package:untitled36/core/utils/text_styles.dart';
-import 'package:untitled36/ui/Doctor/Doctor%20Calls/Presentation/views/widgets/select_nurse_view_body.dart';
+import 'package:untitled36/ui/Doctor/Doctor%20Calls/Presentation/views/widgets/select_employee_view_body.dart';
 
-class SelectNurseView extends StatelessWidget {
-  const SelectNurseView({super.key});
+class SelectEmployeeView extends StatelessWidget {
+  const SelectEmployeeView({super.key, required this.type});
 
+  final String type;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +17,7 @@ class SelectNurseView extends StatelessWidget {
         centerTitle: true,
         surfaceTintColor: AppColors.white,
         title: Text(
-          "Select Nurse",
+          "Select $type",
           style: TextStyles.style16Regular,
         ),
         leading: IconButton(
@@ -29,7 +30,9 @@ class SelectNurseView extends StatelessWidget {
           ),
         ),
       ),
-      body: const SelectNurseViewBody(),
+      body: SelectEmployeeViewBody(
+        type: type,
+      ),
     );
   }
 }

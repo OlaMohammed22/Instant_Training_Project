@@ -22,9 +22,6 @@ class Analysisscreen extends StatelessWidget {
           child: Column(
             children: [
               UserProfile(
-                name: 'Fayez Bahgt',
-                role: 'Specialist, Analysis employee',
-                imagePath: 'assets/rararar.png',
                 onTap: () {
                   context.read<ProfileCubit>().showProfile(null);
                   Navigator.push(

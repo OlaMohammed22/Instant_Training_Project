@@ -64,18 +64,17 @@ class _EmployeeViewBodyState extends State<EmployeeViewBody> {
                 ),
               ),
               SliverToBoxAdapter(
-                child: CustomFilterTabs(
-                  tabList: tabList,
-                  onTabSelected: _onTabSelected,
-                ),
-              ),
+                  child: CustomFilterTabs(
+                tabList: tabList,
+                selectedTab: selectedType,
+                onTabSelected: _onTabSelected,
+              )),
               SliverList(
                 delegate: SliverChildBuilderDelegate(
                   childCount: users.length,
                   (context, index) {
                     final user = users[index];
                     return CustomEmployeeItem(
-                      employeeImage: user.avatar ?? '',
                       specialist: user.type ?? '',
                       name: user.firstName ?? '',
                       onTap: () {

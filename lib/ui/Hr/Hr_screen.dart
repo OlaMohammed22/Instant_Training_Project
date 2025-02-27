@@ -25,9 +25,6 @@ class Hrscreen extends StatelessWidget {
               child: Column(
                 children: [
                   UserProfile(
-                    name: 'Ebrahem Elzainy',
-                    role: 'Specialist, HR',
-                    imagePath: 'assets/hrrr.png',
                     onTap: () {
                       context.read<ProfileCubit>().showProfile(null);
                       Navigator.push(

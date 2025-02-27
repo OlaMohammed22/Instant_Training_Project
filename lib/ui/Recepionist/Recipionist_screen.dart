@@ -25,9 +25,6 @@ class Receptionistscreen extends StatelessWidget {
               child: Column(
                 children: [
                   UserProfile(
-                    name: 'Ebrahem Elzainy',
-                    role: 'Specialist, Receptionist',
-                    imagePath: 'assets/ss.png',
                     onTap: () {
                       context.read<ProfileCubit>().showProfile(null);
                       Navigator.push(

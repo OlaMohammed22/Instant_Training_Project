@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled36/core/utils/app_colors.dart';
-import 'package:untitled36/ui/Doctor/Doctor%20Calls/Presentation/views/select_nurse_view.dart';
+import 'package:untitled36/ui/Doctor/Doctor%20Calls/Presentation/views/select_employee_view.dart';
 import 'package:untitled36/ui/Doctor/Doctor%20Calls/Presentation/views/widgets/call_action_button.dart';
 import 'package:untitled36/ui/Doctor/Doctor%20Calls/Presentation/views/widgets/request_sheet.dart';
 
@@ -23,11 +23,13 @@ class CaseTabContentActionButtons extends StatelessWidget {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context) {
-                  return SelectNurseView();
+                  return SelectEmployeeView(
+                    type: 'Nurse',
+                  );
                 },
               ),
             );
-           // GoRouter.of(context).push(AppRoutes.selectNurseView);
+            // GoRouter.of(context).push(AppRoutes.selectNurseView);
           },
         ),
         const SizedBox(
@@ -39,7 +41,6 @@ class CaseTabContentActionButtons extends StatelessWidget {
           backgroundColor: AppColors.primaryColor,
           icon: Icons.add,
           onPressed: () {
-            
             showRequestSheet(context);
           },
         ),

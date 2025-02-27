@@ -30,9 +30,6 @@ class Doctorscreen extends StatelessWidget {
                     children: [
                       SizedBox(height: height * 0.01),
                       UserProfile(
-                        name: 'Mahmoud Ahmed',
-                        role: 'Specialist, Doctor',
-                        imagePath: 'assets/hjk.png',
                         onTap: () {
                           context.read<ProfileCubit>().showProfile(null);
                           Navigator.push(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled36/ui/Manager/task_view.dart';
+
+import '../../../../Doctor/Doctor Calls/Presentation/views/select_employee_view.dart';
 
 class TaskDetailsScreen extends StatefulWidget {
   @override
@@ -113,7 +114,10 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) {
-                        return TaskView();
+                        return SelectEmployeeView(
+                          type: 'Employee',
+                        );
+                        ;
                       },
                     ),
                   );

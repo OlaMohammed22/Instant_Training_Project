@@ -27,9 +27,6 @@ class Nursescreen extends StatelessWidget {
                     children: [
                       SizedBox(height: height * 0.01),
                       UserProfile(
-                        name: 'Salma Ali',
-                        role: 'Specialist, Nurse',
-                        imagePath: 'assets/ssss.png',
                         onTap: () {
                           context.read<ProfileCubit>().showProfile(null);
                           Navigator.push(
